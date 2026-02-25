@@ -1,0 +1,46 @@
+# Configuração Netlify para o site ARPICA
+
+[build]
+  # Sem build necessário - site estático
+  command = "echo 'Nenhum build necessário'"
+  publish = "."
+
+[dev]
+  # Local development
+  command = "python -m http.server 8000"
+  port = 8000
+
+# Redirecionamentos
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Formulários Netlify
+[functions]
+  directory = "netlify/functions"
