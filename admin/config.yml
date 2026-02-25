@@ -1,8 +1,11 @@
 backend:
   name: github
-  repo: Karhut/site-arpica  # MUDE: para o seu repositório GitHub
+  repo: Karhut/site-arpica
   branch: main
-  auth_endpoint: /api/auth
+
+auth:
+  endpoint: /api/auth
+  persistence: localStorage
 
 media_folder: images/uploads
 public_folder: /images/uploads
