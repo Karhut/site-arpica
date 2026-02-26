@@ -1,8 +1,8 @@
 backend:
-  name: github
-  repo: Karhut/site-arpica
+  name: git-gateway
   branch: main
-  auth_scope: repo
+  identity_url: https://site-arpica.netlify.app/.netlify/identity
+  gateway_url: https://site-arpica.netlify.app/.netlify/git
 
 media_folder: images/uploads
 public_folder: /images/uploads
