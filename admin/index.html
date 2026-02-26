@@ -5,23 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>ARPICA - Painel de Administração</title>
+    <!-- Decap CMS (antes Netlify CMS) -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" />
   </head>
   <body>
-    <!-- Carregar Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
-    <script src="https://unpkg.com/netlify-identity-widget"></script>
-    
-    <script>
-      // Inicializar Netlify Identity
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+    <!-- Painel Decap CMS será carregado aqui -->
   </body>
 </html>

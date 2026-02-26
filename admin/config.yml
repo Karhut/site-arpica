@@ -2,10 +2,7 @@ backend:
   name: github
   repo: Karhut/site-arpica
   branch: main
-
-auth:
-  endpoint: /api/auth
-  persistence: localStorage
+  base_url: https://api.github.com
 
 media_folder: images/uploads
 public_folder: /images/uploads
@@ -26,7 +23,6 @@ collections:
       - { label: "Serviços (um por linha)", name: "services", widget: "list" }
       - { label: "Horário", name: "schedule", widget: "string", required: false }
       - { label: "Local", name: "location", widget: "string", required: false }
-      - { label: "Link Contacto", name: "contact_link", widget: "string", required: false }
 
   # ========== DIREÇÃO ==========
   - name: direcao
@@ -40,7 +36,6 @@ collections:
       - { label: "Secção", name: "section", widget: "select", options: ["Direção", "Conselho Fiscal", "Assembleia Geral"] }
       - { label: "Descrição", name: "description", widget: "text", required: false }
       - { label: "Imagem", name: "image", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
 
   # ========== DOCUMENTOS ==========
   - name: documentos
@@ -61,15 +56,13 @@ collections:
     folder: _data/noticias
     create: true
     format: json
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Data do Evento", name: "date", widget: "datetime" }
-      - { label: "Resumo/Preview", name: "excerpt", widget: "text" }
+      - { label: "Resumo", name: "excerpt", widget: "text" }
       - { label: "Conteúdo Completo", name: "body", widget: "markdown" }
       - { label: "Imagem", name: "image", widget: "image", required: false }
       - { label: "Autor", name: "author", widget: "string", required: false }
-      - { label: "Publicado?", name: "published", widget: "boolean", default: true }
 
   # ========== CONFIGURAÇÃO DO SITE ==========
   - name: config
@@ -89,11 +82,7 @@ collections:
           - { label: "Horário (2ª-6ª)", name: "hours_weekday", widget: "string" }
           - { label: "Horário (Sábado)", name: "hours_saturday", widget: "string" }
           - { label: "Horário (Domingo)", name: "hours_sunday", widget: "string" }
-          - { label: "Descrição Breve", name: "description", widget: "text" }
 
-# Habilitar editor visual (preview)
+# Habilitar editor visual
 editor:
   preview: true
-
-# Modo editorial (requere aprovação antes de publicar)
-publish_mode: editorial_workflow
