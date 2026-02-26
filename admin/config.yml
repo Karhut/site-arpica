@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Karhut/site-arpica
   branch: main
+  auth_scope: repo
 
 media_folder: images/uploads
 public_folder: /images/uploads
