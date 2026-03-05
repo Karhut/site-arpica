@@ -18,7 +18,10 @@ collections:
     folder: _data/actividades
     create: true
     format: json
+<<<<<<< HEAD
     extension: json
+=======
+>>>>>>> 78ffe4b76a61da2027ae2fa7758d194680073a1d
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Descrição", name: "description", widget: "markdown" }
@@ -33,12 +36,19 @@ collections:
     folder: _data/direcao
     create: true
     format: json
+<<<<<<< HEAD
     extension: json
+=======
+>>>>>>> 78ffe4b76a61da2027ae2fa7758d194680073a1d
     fields:
       - { label: "Nome Completo", name: "name", widget: "string" }
       - { label: "Cargo", name: "role", widget: "string" }
       - { label: "Secção", name: "section", widget: "select", options: ["Direção", "Conselho Fiscal", "Assembleia Geral"] }
+<<<<<<< HEAD
       - { label: "Descrição/Biografia", name: "description", widget: "text", required: false }
+=======
+      - { label: "Descrição", name: "description", widget: "text", required: false }
+>>>>>>> 78ffe4b76a61da2027ae2fa7758d194680073a1d
       - { label: "Imagem", name: "image", widget: "image", required: false }
 
   # ========== DOCUMENTOS ==========
@@ -47,7 +57,10 @@ collections:
     folder: _data/documentos
     create: true
     format: json
+<<<<<<< HEAD
     extension: json
+=======
+>>>>>>> 78ffe4b76a61da2027ae2fa7758d194680073a1d
     fields:
       - { label: "Ano", name: "year", widget: "number" }
       - { label: "Tipo", name: "type", widget: "select", options: ["Contas", "Relatório", "Estatutos", "Outro"] }
@@ -61,7 +74,10 @@ collections:
     folder: _data/noticias
     create: true
     format: json
+<<<<<<< HEAD
     extension: json
+=======
+>>>>>>> 78ffe4b76a61da2027ae2fa7758d194680073a1d
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Data do Evento", name: "date", widget: "datetime" }

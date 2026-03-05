@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado - ARPICA</title>
+    <meta name="description" content="Seja voluntário na ARPICA e faça a diferença na comunidade">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/lightbox-forms.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+
+<!-- ========== HEADER / NAVEGAÇÃO ========== -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.svg" alt="Logo ARPICA" class="logo-img">
+            <h1>ARPICA</h1>
+        </div>
+        
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="actividades.html"><i class="fas fa-tasks"></i> Atividades</a></li>
+                <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                <li><a href="direcao.html"><i class="fas fa-users"></i> Direção</a></li>
+                <li><a href="documentos.html"><i class="fas fa-file-alt"></i> Documentos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                <li><a href="voluntariado.html"><i class="fas fa-heart"></i> Voluntariado</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- ========== PÁGINA: VOLUNTARIADO ========== -->
+<main class="main-content">
+    <div class="container">
+        
+        <!-- PÁGINA: VOLUNTARIADO -->
+        <section class="page-intro">
+            <h1>Seja Voluntário</h1>
+            <p class="lead">Ajude-nos a servir melhor a comunidade! Existem várias formas de se envolver e fazer a diferença na vida dos idosos.</p>
+        </section>
+        
+        <!-- SECÇÃO: PORQUE VOLUNTARIAR -->
+        <section class="why-volunteer">
+            <h2>Porque Ser Voluntário?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>❤️ Fazer Diferença</h3>
+                    <p>Contribua para melhorar a qualidade de vida dos idosos da nossa comunidade</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🤝 Comunidade</h3>
+                    <p>Faça parte de uma equipa dedicada ao bem-estar e solidariedade social</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>📚 Aprender</h3>
+                    <p>Adquira novas competências e conhecimentos em cuidados à pessoa idosa</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>✨ Crescer</h3>
+                    <p>Desenvolva-se pessoalmente e ganhe experiência valiosa</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECÇÃO: OPORTUNIDADES DE VOLUNTARIADO -->
+        <section class="volunteer-opportunities">
+            <h2>Oportunidades Disponíveis</h2>
+            
+            <article class="opportunity-card">
+                <h3>Acompanhador Social</h3>
+                <p><strong>Descrição:</strong> Acompanhar idosos em atividades sociais, visitas e atividades de lazer</p>
+                <p><strong>Requisitos:</strong> Disponibilidade, capacidade de ouvir, gosto por trabalhar com idosos</p>
+                <p><strong>Frequência:</strong> 4-8 horas por semana (flexível)</p>
+                <a href="#volunteer-form" class="btn">Candidatar-me</a>
+            </article>
+            
+            <article class="opportunity-card">
+                <h3>Auxiliar de Cuidados</h3>
+                <p><strong>Descrição:</strong> Apoiar na higiene, refeições e atividades diárias</p>
+                <p><strong>Requisitos:</strong> Formação em cuidados básicos, empatia, paciência</p>
+                <p><strong>Frequência:</strong> Conforme disponibilidade</p>
+                <a href="#volunteer-form" class="btn">Candidatar-me</a>
+            </article>
+
+            <article class="opportunity-card">
+                <h3>Animador Social</h3>
+                <p><strong>Descrição:</strong> Dinamizar atividades recreativas, jogos, eventos e celebrações</p>
+                <p><strong>Requisitos:</strong> Criatividade, dinamismo, gosto por atividades em grupo</p>
+                <p><strong>Frequência:</strong> 3-6 horas por semana</p>
+                <a href="#volunteer-form" class="btn">Candidatar-me</a>
+            </article>
+            
+        </section>
+        
+        <!-- SECÇÃO: FORMULÁRIO DE CANDIDATURA -->
+        <section class="volunteer-form" id="volunteer-form">
+            <h2>Candidature-se Agora</h2>
+            
+            <form id="volunteer-signup" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                
+                <!-- Campo: Nome -->
+                <div class="form-group">
+                    <label for="v-name">Nome Completo *</label>
+                    <input 
+                        type="text" 
+                        id="v-name" 
+                        name="v-name" 
+                        required
+                    >
+                </div>
+                
+                <!-- Campo: Email -->
+                <div class="form-group">
+                    <label for="v-email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="v-email" 
+                        name="v-email" 
+                        required
+                    >
+                </div>
+                
+                <!-- Campo: Telefone -->
+                <div class="form-group">
+                    <label for="v-phone">Telefone *</label>
+                    <input 
+                        type="tel" 
+                        id="v-phone" 
+                        name="v-phone" 
+                        required
+                    >
+                </div>
+                
+                <!-- Campo: Tipo de Voluntariado -->
+                <div class="form-group">
+                    <label for="v-type">Tipo de Voluntariado Interessado *</label>
+                    <select id="v-type" name="v-type" required>
+                        <option value="">--- Selecione ---</option>
+                        <option value="[MUDAR: Tipo 1]">[MUDAR: Tipo 1]</option>
+                        <option value="[MUDAR: Tipo 2]">[MUDAR: Tipo 2]</option>
+                    </select>
+                </div>
+                
+                <!-- Campo: Disponibilidade -->
+                <div class="form-group">
+                    <label for="v-availability">Disponibilidade Semanal *</label>
+                    <select id="v-availability" name="v-availability" required>
+                        <option value="">--- Selecione ---</option>
+                        <option value="< 2 horas">Menos de 2 horas</option>
+                        <option value="2-4 horas">2-4 horas</option>
+                        <option value="4+ horas">4+ horas</option>
+                    </select>
+                </div>
+                
+                <!-- Campo: Mensagem -->
+                <div class="form-group">
+                    <label for="v-message">Por Que Quer Ser Voluntário?</label>
+                    <textarea 
+                        id="v-message" 
+                        name="v-message" 
+                        rows="5"
+                    ></textarea>
+                </div>
+                
+                <!-- Botão Enviar -->
+                <button type="submit" class="btn btn-primary">Enviar Candidatura</button>
+                
+            </form>
+        </section>
+        
+        <!-- SECÇÃO: FAQ -->
+        <section class="faq">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <h3>[MUDAR: Pergunta 1]</h3>
+                <p>[MUDAR: Resposta]</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>[MUDAR: Pergunta 2]</h3>
+                <p>[MUDAR: Resposta]</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>[MUDAR: Pergunta 3]</h3>
+                <p>[MUDAR: Resposta]</p>
+            </div>
+            
+        </section>
+        
+    </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacte-nos</h3>
+                <p>Endereço: Rua Dr. José Antónios Simões, Nº 52, Alpiarca</p>
+                <p>Telefone: <a href="tel:+351243558862">+351 243 558 862</a></p>
+                <p>Email: <a href="mailto:geral.arpica@hotmail.com">geral.arpica@hotmail.com</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horário</h3>
+                <p>Segunda a Sexta: 09:00 - 17:00</p>
+                <p>Sábado: Fechado</p>
+                <p>Domingo: Fechado</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/arpica.alpiarca/" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ARPICA. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/lightbox-forms.js"></script>
+
+</body>
+</html>
+
