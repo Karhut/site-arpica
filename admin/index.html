@@ -1,28 +1,193 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>ARPICA - Painel de Administração</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARPICA - Login CMS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      text-align: center;
+      color: white;
+    }
+    .header h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .header p {
+      opacity: 0.9;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .login-box {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    .login-box h2 {
+      color: #2c5282;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .login-box p {
+      color: #666;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .loading {
+      text-align: center;
+      color: #666;
+      padding: 2rem;
+    }
+    .error {
+      background: #fed7d7;
+      color: #c53030;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .success {
+      background: #c6f6d5;
+      color: #276749;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background: #2c5282;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background: #1a365d;
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #4a5568;
+    }
+    .btn-secondary:hover {
+      background: #cbd5e0;
+    }
+    #netlify-cms-widget {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🔐 ARPICA CMS</h1>
+    <p>Painel de Administração</p>
+  </div>
+  
+  <div class="container">
+    <div class="login-box">
+      <h2>Bem-vindo(a)!</h2>
+      <p>Faz login para gerir o conteúdo do site</p>
+      
+      <div id="message"></div>
+      <div id="loading" class="loading">A carregar formulário de login...</div>
+      
+      <!-- Widget do Netlify Identity -->
+      <div id="netlify-cms-widget"></div>
+      
+      <div id="admin-link" style="display: none; margin-top: 1.5rem; text-align: center;">
+        <p style="color: #276749; margin-bottom: 1rem;">✅ Login efetuado com sucesso!</p>
+        <a href="/admin/cms.html" class="btn">Ir para o CMS →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <script>
+    // Configurar widget
+    window.netlifyIdentity.on('init', user => {
+      document.getElementById('loading').style.display = 'none';
+      
+      if (user) {
+        // Usuário já está logado
+        document.getElementById('admin-link').style.display = 'block';
+        document.getElementById('message').innerHTML = `
+          <div class="success">
+            Olá, ${user.email}! Já estás logado.
+          </div>
+        `;
+      } else {
+        // Mostrar widget de login
+        window.netlifyIdentity.open();
       }
-      .loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 18px;
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="loading">A carregar o painel de administração...</div>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  </body>
+    });
+
+    window.netlifyIdentity.on('login', user => {
+      document.getElementById('message').innerHTML = `
+        <div class="success">
+          ✅ Login efetuado com sucesso!
+        </div>
+      `;
+      document.getElementById('admin-link').style.display = 'block';
+    });
+
+    window.netlifyIdentity.on('error', err => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('message').innerHTML = `
+        <div class="error">
+          ❌ Erro: ${err.message}
+        </div>
+      `;
+    });
+
+    // Processar recovery token se existir na URL
+    const hash = window.location.hash;
+    if (hash && hash.includes('recovery_token')) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('message').innerHTML = `
+        <div class="success">
+          🔑 Link de recuperação detetado!
+          <br><br>
+          O formulário de login vai abrir automaticamente para definires a tua password.
+        </div>
+      `;
+      // Abrir widget para processar o token
+      setTimeout(() => {
+        window.netlifyIdentity.open();
+      }, 1000);
+    }
+
+    // Inicializar widget
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init();
+    }
+  </script>
+</body>
 </html>
