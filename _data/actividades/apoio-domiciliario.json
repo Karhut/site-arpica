@@ -1,0 +1,15 @@
+{
+  "title": "Apoio Domiciliário",
+  "description": "Serviço de cuidados em casa para auxiliar em atividades diárias. Permitimos que os idosos mantenham a sua independência no conforto do seu lar.",
+  "image": "/images/uploads/apoio-domiciliario.jpg",
+  "services": [
+    "Apoio na higiene pessoal",
+    "Preparação de refeições",
+    "Apoio na medicação",
+    "Pequenas compras",
+    "Acompanhamento a consultas",
+    "Limpeza e arrumação da habitação"
+  ],
+  "schedule": "Segunda a Domingo: Horário flexível",
+  "location": "Domicílio do utente"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Centro de Convívio",
+  "description": "Espaço de encontro, convivência e atividades sociais para reformados e pensionistas desde 1983. Promovemos atividades de socialização, lazer e bem-estar.",
+  "image": "/images/uploads/centro-convivio.jpg",
+  "services": [
+    "Atividades recreativas e de lazer",
+    "Jogos e competições",
+    "Eventos sociais e festas",
+    "Integração comunitária",
+    "Comemorações de aniversários",
+    "Saídas e passeios"
+  ],
+  "schedule": "Segunda a Sexta: 09:00 - 17:00",
+  "location": "Rua Dr. José Antónios Simões, Nº 52, Alpiarca"
+}

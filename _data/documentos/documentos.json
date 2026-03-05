@@ -1,0 +1,37 @@
+[
+  {
+    "year": 2025,
+    "type": "Contas",
+    "title": "Contas Gerenciais 2025",
+    "url": "/documentos/contas-2025.pdf",
+    "description": "Relatório de contas gerenciais do exercício de 2025"
+  },
+  {
+    "year": 2025,
+    "type": "Relatório",
+    "title": "Relatório de Atividades 2025",
+    "url": "/documentos/relatorio-2025.pdf",
+    "description": "Relatório das atividades desenvolvidas em 2025"
+  },
+  {
+    "year": 2024,
+    "type": "Contas",
+    "title": "Contas Gerenciais 2024",
+    "url": "/documentos/contas-2024.pdf",
+    "description": "Relatório de contas gerenciais do exercício de 2024"
+  },
+  {
+    "year": 2024,
+    "type": "Relatório",
+    "title": "Relatório de Atividades 2024",
+    "url": "/documentos/relatorio-2024.pdf",
+    "description": "Relatório das atividades desenvolvidas em 2024"
+  },
+  {
+    "year": 2023,
+    "type": "Estatutos",
+    "title": "Estatutos Sociais",
+    "url": "/documentos/estatutos.pdf",
+    "description": "Estatutos da ARPICA atualizados"
+  }
+]

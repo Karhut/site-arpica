@@ -1,0 +1,16 @@
+{
+  "title": "Cuidados Integrados (SADI)",
+  "description": "Serviço de Apoio Domiciliário Integrado desde 2001. Cuidados de saúde e apoio social especializados no domicílio do utente.",
+  "image": "/images/uploads/sadi.jpg",
+  "services": [
+    "Cuidados de enfermagem especializados",
+    "Fisioterapia no domicílio",
+    "Apoio médico",
+    "Administração de medicação",
+    "Tratamento de feridas",
+    "Apoio higiénico",
+    "Acompanhamento a consultas"
+  ],
+  "schedule": "Segunda a Sexta: 09:00 - 17:00 (com flexibilidade)",
+  "location": "Domicílio do utente"
+}

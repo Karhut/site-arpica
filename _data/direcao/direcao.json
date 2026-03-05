@@ -1,0 +1,44 @@
+[
+  {
+    "name": "[Nome do Presidente]",
+    "role": "Presidente",
+    "section": "Direção",
+    "description": "Presidente da Direção da ARPICA",
+    "image": "/images/uploads/direcao/presidente.jpg"
+  },
+  {
+    "name": "[Nome do Vice-Presidente]",
+    "role": "Vice-Presidente",
+    "section": "Direção",
+    "description": "Vice-Presidente da Direção",
+    "image": "/images/uploads/direcao/vice-presidente.jpg"
+  },
+  {
+    "name": "[Nome do Secretário]",
+    "role": "Secretário",
+    "section": "Direção",
+    "description": "Secretário da Direção",
+    "image": "/images/uploads/direcao/secretario.jpg"
+  },
+  {
+    "name": "[Nome do Tesoureiro]",
+    "role": "Tesoureiro",
+    "section": "Direção",
+    "description": "Tesoureiro da Direção",
+    "image": "/images/uploads/direcao/tesoureiro.jpg"
+  },
+  {
+    "name": "[Nome do Vogal 1]",
+    "role": "Vogal",
+    "section": "Direção",
+    "description": "Membro da Direção",
+    "image": "/images/uploads/direcao/vogal1.jpg"
+  },
+  {
+    "name": "[Nome do Vogal 2]",
+    "role": "Vogal",
+    "section": "Direção",
+    "description": "Membro da Direção",
+    "image": "/images/uploads/direcao/vogal2.jpg"
+  }
+]

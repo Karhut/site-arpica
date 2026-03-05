@@ -1,0 +1,23 @@
+[
+  {
+    "name": "[Nome do Presidente da Assembleia]",
+    "role": "Presidente",
+    "section": "Assembleia Geral",
+    "description": "Presidente da Assembleia Geral",
+    "image": "/images/uploads/direcao/assembleia-presidente.jpg"
+  },
+  {
+    "name": "[Nome do Vice-Presidente da Assembleia]",
+    "role": "Vice-Presidente",
+    "section": "Assembleia Geral",
+    "description": "Vice-Presidente da Assembleia Geral",
+    "image": "/images/uploads/direcao/assembleia-vice.jpg"
+  },
+  {
+    "name": "[Nome do Secretário da Assembleia]",
+    "role": "Secretário",
+    "section": "Assembleia Geral",
+    "description": "Secretário da Assembleia Geral",
+    "image": "/images/uploads/direcao/assembleia-secretario.jpg"
+  }
+]

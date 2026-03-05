@@ -1,0 +1,23 @@
+[
+  {
+    "name": "[Nome do Presidente do Conselho Fiscal]",
+    "role": "Presidente",
+    "section": "Conselho Fiscal",
+    "description": "Presidente do Conselho Fiscal",
+    "image": "/images/uploads/direcao/fiscal-presidente.jpg"
+  },
+  {
+    "name": "[Nome do Relator]",
+    "role": "Relator",
+    "section": "Conselho Fiscal",
+    "description": "Relator do Conselho Fiscal",
+    "image": "/images/uploads/direcao/fiscal-relator.jpg"
+  },
+  {
+    "name": "[Nome do Membro]",
+    "role": "Membro",
+    "section": "Conselho Fiscal",
+    "description": "Membro do Conselho Fiscal",
+    "image": "/images/uploads/direcao/fiscal-membro.jpg"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "title": "Centro de Dia",
+  "description": "Serviço de cuidados diários para idosos que necessitam de acompanhamento durante o dia. Inclui refeições, animação e acompanhamento profissional desde 1999.",
+  "image": "/images/uploads/centro-dia.jpg",
+  "services": [
+    "Apoio em atividades da vida diária",
+    "Refeições equilibradas",
+    "Atividades de animação sociocultural",
+    "Acompanhamento por equipa multidisciplinar",
+    "Higiene e conforto",
+    "Atividades terapêuticas"
+  ],
+  "schedule": "Segunda a Sexta: 08:00 - 18:00",
+  "location": "Rua Dr. José Antónios Simões, Nº 52, Alpiarca"
+}

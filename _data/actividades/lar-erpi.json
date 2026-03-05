@@ -1,0 +1,16 @@
+{
+  "title": "Lar de Idosos (ERPI)",
+  "description": "Residência com cuidados médicos e de enfermagem especializada desde 2013. Estrutura Residencial para Idosos que oferece alojamento permanente com todos os cuidados necessários.",
+  "image": "/images/uploads/lar-erpi.jpg",
+  "services": [
+    "Alojamento em quartos individuais ou duplos",
+    "Cuidados de enfermagem 24h",
+    "Apoio médico regular",
+    "Refeições equilibradas",
+    "Atividades de animação",
+    "Fisioterapia",
+    "Apoio psicológico"
+  ],
+  "schedule": "24 horas por dia, 7 dias por semana",
+  "location": "Rua Dr. José Antónios Simões, Nº 52, Alpiarca"
+}
