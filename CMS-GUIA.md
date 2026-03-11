@@ -1,189 +1,140 @@
-# 📋 Guia de Implementação do CMS (Decap CMS)
+# 📋 Guia do CMS Custom — ARPICA
 
 ## Visão Geral
 
-Este guia explica como configurar e usar o **Decap CMS** (antigo Netlify CMS) para permitir que a equipa da ARPICA edite o conteúdo do site sem precisar de mexer em código.
+O site ARPICA utiliza um **CMS custom** que permite editar todo o conteúdo diretamente através de um painel de administração em `/admin/`. A autenticação é feita via **GitHub OAuth** e os dados são guardados como ficheiros JSON no repositório.
 
 ---
 
-## 📁 Estrutura Atual
+## ⚙️ Configuração Inicial (Uma Única Vez)
 
-```
-_data/
-├── siteinfo.json           # Informações institucionais
-├── actividades/
-│   ├── centro-convivio.json
-│   ├── centro-dia.json
-│   ├── apoio-domiciliario.json
-│   ├── lar-erpi.json
-│   └── sadi.json
-├── direcao/
-│   ├── direcao.json
-│   ├── conselho-fiscal.json
-│   └── assembleia-geral.json
-├── documentos/
-│   └── documentos.json
-└── noticias/
-    └── noticias.json
+### 1. Criar GitHub OAuth App
 
-images/
-└── uploads/                # Para onde vão as imagens do CMS
-```
+1. Aceda a: https://github.com/settings/developers
+2. Clique em **"New OAuth App"**
+3. Preencha:
+   - **Application name:** `ARPICA CMS`
+   - **Homepage URL:** `https://seu-site.netlify.app`
+   - **Authorization callback URL:** `https://seu-site.netlify.app/admin/`
+4. Clique em **"Register application"**
+5. Copie o **Client ID**
+6. Gere e copie o **Client Secret**
 
----
+### 2. Configurar Netlify
 
-## ⚙️ Configuração Necessária
+1. No painel do Netlify → **Site settings** → **Environment variables**
+2. Adicione:
+   - `GITHUB_CLIENT_ID` → (cole o Client ID)
+   - `GITHUB_CLIENT_SECRET` → (cole o Client Secret)
 
-### Opção 1: **Netlify (Recomendado - Mais Fácil)**
+### 3. Atualizar o Client ID no HTML
 
-1. **Criar conta no Netlify:** https://app.netlify.com
-
-2. **Conectar repositório GitHub:**
-   - "Add new site" → "Import an existing project"
-   - Escolher "GitHub" e autorizar
-   - Selecionar repositório: `Karhut/site-arpica`
-
-3. **Configurar build:**
-   - Build command: (deixar vazio - site estático)
-   - Publish directory: `/` (raiz do projeto)
-
-4. **Configurar CMS:**
-   - Em "Site settings" → "Identity" → "Enable Identity"
-   - Em "Registration preferences" → escolher "Invite only"
-   - Em "Services" → "Git Gateway" → "Enable Git Gateway"
-
-5. **Aceder ao CMS:**
-   - URL: `https://seu-site.netlify.app/admin/`
-   - Fazer login com email convidado
-
-### Opção 2: **GitHub Pages (Gratuito)**
-
-1. **Ativar GitHub Pages:**
-   - Settings → Pages → Source: `main` branch → `/ (root)`
-
-2. **Configurar CMS para GitHub Pages:**
-   - O `admin/config.yml` já está configurado para GitHub
-
-3. **Criar ficheiro `admin/index.html`:**
+1. Abra `admin/index.html`
+2. Substitua `GITHUB_CLIENT_ID` pelo seu Client ID real:
    ```html
-   <!DOCTYPE html>
-   <html>
-   <head>
-     <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <title>ARPICA CMS</title>
-   </head>
-   <body>
-     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-   </body>
-   </html>
+   <meta name="github-client-id" content="SEU_CLIENT_ID_AQUI">
    ```
 
-4. **Autenticação:**
-   - Para GitHub Pages, é necessário usar **Netlify Identity** ou outro serviço de autenticação
+### 4. Deploy
+
+Faça push para o branch `main` — o Netlify faz deploy automaticamente.
 
 ---
 
 ## 🎯 Como Usar o CMS
 
-### 1. **Aceder ao Painel**
+### Aceder ao Painel
 - URL: `https://seu-site.netlify.app/admin/`
-- Login com email e senha
+- Clique em **"Entrar com GitHub"**
+- Autorize a aplicação (apenas na primeira vez)
 
-### 2. **Editar Informações Institucionais**
-- Secção: **⚙️ Configurações**
-- Campos: Nome, morada, telefone, email, horários
-- Estes dados atualizam automaticamente o `siteinfo.json`
+### Secções Disponíveis
 
-### 3. **Gerir Atividades**
-- Secção: **Atividades**
-- Criar, editar ou remover atividades
-- Cada atividade tem: título, descrição, imagem, serviços, horário, local
+| Secção | O que edita |
+|--------|-------------|
+| ⚙️ **Configurações** | Nome, morada, telefone, email, horários |
+| 📋 **Atividades** | Serviços: Centro de Convívio, Centro de Dia, SAD, SADI, ERPI |
+| 👥 **Direção** | Membros da Direção, Conselho Fiscal, Assembleia Geral |
+| 📄 **Documentos** | Documentos institucionais (contas, relatórios, estatutos) |
+| 📰 **Notícias** | Notícias e eventos |
+| 🖼️ **Galeria** | Fotografias da galeria |
+| 📝 **Páginas** | Conteúdo das páginas Sobre e Voluntariado |
+| 📤 **Media** | Upload e gestão de imagens |
 
-### 4. **Gerir Direção**
-- Secção: **Membros da Direção**
-- Adicionar membros para:
-  - Direção
-  - Conselho Fiscal
-  - Assembleia Geral
+### Editar Conteúdo
+1. Clique na secção pretendida
+2. Clique em **"Editar"** no item desejado
+3. Modifique os campos
+4. Clique em **"💾 Guardar"**
 
-### 5. **Gerir Documentos**
-- Secção: **Documentos**
-- Upload de PDFs (ou links para URLs externos)
-- Organizar por ano e tipo
+### Adicionar Novo Conteúdo
+1. Clique em **"+ Novo"** na secção pretendida
+2. Preencha os campos
+3. Clique em **"💾 Guardar"**
 
-### 6. **Gerir Notícias**
-- Secção: **Notícias & Eventos**
-- Criar notícias com data, imagem e conteúdo
-
----
-
-## 📝 Notas Importantes
-
-### Formato dos Ficheiros
-
-**Atividades e Notícias:** Um ficheiro JSON por item
-```json
-{
-  "title": "Exemplo",
-  "description": "Descrição..."
-}
-```
-
-**Direção e Documentos:** Arrays JSON num único ficheiro
-```json
-[
-  {
-    "name": "Nome da Pessoa",
-    "role": "Cargo"
-  }
-]
-```
-
-### Imagens
-
-- As imagens fazem upload para `images/uploads/`
-- O CMS guarda o caminho no ficheiro JSON
-- Exemplo: `/images/uploads/foto-evento.jpg`
-
-### URLs de Documentos
-
-- Para PDFs locais: `/documentos/ficheiro.pdf`
-- Para URLs externos: `https://exemplo.com/doc.pdf`
+### Upload de Imagens
+1. Vá a **"Media"**
+2. Clique em **"📤 Upload Imagem"**
+3. Selecione a imagem do seu computador
+4. A imagem ficará disponível em `/images/uploads/nome-da-imagem.jpg`
 
 ---
 
-## 🔧 Problemas Comuns e Soluções
+## 📁 Estrutura de Dados
 
-### "Unable to locate resource"
-- Verificar se as pastas `_data/*` existem
-- Confirmar que os ficheiros JSON são válidos
+```
+_data/
+├── siteinfo.json              # Configurações gerais do site
+├── actividades/               # Uma atividade por ficheiro
+│   ├── centro-convivio.json
+│   ├── centro-dia.json
+│   ├── apoio-domiciliario.json
+│   ├── lar-erpi.json
+│   └── sadi.json
+├── direcao/                   # Órgãos sociais
+│   ├── direcao.json
+│   ├── conselho-fiscal.json
+│   └── assembleia-geral.json
+├── documentos/
+│   └── documentos.json        # Lista de documentos
+├── noticias/
+│   └── noticias.json          # Lista de notícias
+├── galeria.json               # Lista de imagens da galeria
+└── paginas/
+    ├── sobre.json             # Conteúdo da página Sobre
+    └── voluntariado.json      # Conteúdo da página Voluntariado
+
+images/
+└── uploads/                   # Imagens carregadas via CMS
+```
+
+---
+
+## 🔒 Segurança
+
+- **Autenticação:** GitHub OAuth (apenas utilizadores com acesso ao repositório)
+- **Headers de segurança:** CSP, X-Frame-Options, X-Content-Type-Options (via netlify.toml)
+- **Spam protection:** Honeypot nos formulários
+- **SRI:** Subresource Integrity nos CDN externos
+- **Sem secrets no código:** Client Secret guardado nas variáveis de ambiente do Netlify
+
+---
+
+## 🔧 Resolução de Problemas
+
+### "OAuth not configured"
+- Verifique que as variáveis `GITHUB_CLIENT_ID` e `GITHUB_CLIENT_SECRET` estão definidas no Netlify
+
+### Popup de login não aparece
+- Verifique que o Client ID está correto no `<meta name="github-client-id">`
+
+### Erro ao guardar
+- Verifique que a sua conta GitHub tem permissão de escrita no repositório
 
 ### Imagens não aparecem
-- Verificar caminho: deve começar com `/images/uploads/`
-- Confirmar que o ficheiro existe na pasta
-
-### CMS não carrega
-- Verificar `admin/index.html` e `admin/config.yml`
-- Confirmar que o Netlify Identity está ativo
+- Verifique que o caminho começa com `/images/uploads/`
 
 ---
 
-## 🚀 Próximos Passos
-
-1. **Configurar Netlify** (ou GitHub Pages)
-2. **Testar CMS** com uma edição simples
-3. **Convidar utilizadores** da equipa ARPICA
-4. **Formação básica** à equipa
-
----
-
-## 📞 Suporte
-
-- **Documentação Decap CMS:** https://decapcms.org/docs/
-- **Comunidade:** https://github.com/decaporg/decap-cms/discussions
-
----
-
-**Criado:** Março 2026  
-**Versão:** 1.0
+**Criado:** Março 2026
+**Versão:** 2.0 — CMS Custom com GitHub OAuth

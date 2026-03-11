@@ -67,6 +67,25 @@
     box-sizing: border-box;
 }
 
+/* Skip to content (accessibility) */
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    z-index: 10000;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 0.2s;
+}
+.skip-to-content:focus {
+    top: 0;
+}
+
 /* ========== SCROLL SNAP - Secções ========== */
 
 html {
@@ -152,6 +171,12 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s, padding 0.3s;
+}
+
+.header.scrolled {
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header .container {
@@ -837,4 +862,37 @@ tbody tr:hover {
 
 .shadow {
     box-shadow: var(--shadow-md);
+}
+
+/* Form feedback messages */
+.form-success {
+    background: #d4edda;
+    color: #155724;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+    border: 1px solid #c3e6cb;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+    border: 1px solid #f5c6cb;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Map responsive */
+.map iframe {
+    width: 100%;
+    border: 0;
+    border-radius: var(--radius-md);
 }

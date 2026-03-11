@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "src": "/images/uploads/evento-comunitario.jpg",
+    "alt": "Evento comunitário",
+    "caption": "Evento comunitário da ARPICA"
+  },
+  {
+    "id": "2",
+    "src": "/images/uploads/atividade-social.jpg",
+    "alt": "Atividade social",
+    "caption": "Atividade social com utentes"
+  },
+  {
+    "id": "3",
+    "src": "/images/uploads/formacao.jpg",
+    "alt": "Formação",
+    "caption": "Sessão de formação"
+  },
+  {
+    "id": "4",
+    "src": "/images/uploads/voluntariado.jpg",
+    "alt": "Voluntariado",
+    "caption": "Atividades de voluntariado"
+  },
+  {
+    "id": "5",
+    "src": "/images/uploads/convivio.jpg",
+    "alt": "Convívio",
+    "caption": "Momento de convívio"
+  },
+  {
+    "id": "6",
+    "src": "/images/uploads/comunidade.jpg",
+    "alt": "Comunidade",
+    "caption": "Trabalho com a comunidade"
+  },
+  {
+    "id": "7",
+    "src": "/images/uploads/atividades.jpg",
+    "alt": "Atividades",
+    "caption": "Atividades recreativas"
+  },
+  {
+    "id": "8",
+    "src": "/images/uploads/saude.jpg",
+    "alt": "Saúde",
+    "caption": "Cuidados de saúde"
+  },
+  {
+    "id": "9",
+    "src": "/images/uploads/apoio-idoso.jpg",
+    "alt": "Apoio ao idoso",
+    "caption": "Apoio personalizado ao idoso"
+  },
+  {
+    "id": "10",
+    "src": "/images/uploads/refeicoes.jpg",
+    "alt": "Refeições",
+    "caption": "Serviço de refeições"
+  },
+  {
+    "id": "11",
+    "src": "/images/uploads/passeios.jpg",
+    "alt": "Passeios",
+    "caption": "Passeios e excursões"
+  },
+  {
+    "id": "12",
+    "src": "/images/uploads/celebracoes.jpg",
+    "alt": "Celebrações",
+    "caption": "Festas e celebrações"
+  }
+]

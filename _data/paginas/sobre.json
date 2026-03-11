@@ -1,0 +1,38 @@
+{
+  "hero_title": "Sobre a ARPICA",
+  "hero_description": "Conheça a nossa história, missão e valores.",
+  "history": {
+    "title": "A Nossa História",
+    "content": "A ARPICA — Associação de Reformados, Pensionistas e Idosos do Concelho de Alpiarca — foi fundada em 1983 com o objetivo de promover o bem-estar e a qualidade de vida dos idosos da comunidade de Alpiarca.\n\nAo longo de mais de 40 anos, a ARPICA tem sido um pilar fundamental no apoio à terceira idade, oferecendo serviços que vão desde o acompanhamento social até aos cuidados de saúde."
+  },
+  "mission": {
+    "title": "Missão e Valores",
+    "content": "A nossa missão é proporcionar aos idosos uma vida digna, ativa e integrada na comunidade, através de serviços de qualidade e de proximidade.",
+    "values": [
+      { "name": "Dignidade", "description": "Respeito pela autonomia e individualidade de cada pessoa" },
+      { "name": "Solidariedade", "description": "Compromisso com o apoio mútuo e a coesão social" },
+      { "name": "Qualidade", "description": "Excelência nos cuidados e nos serviços prestados" },
+      { "name": "Transparência", "description": "Gestão aberta e responsável dos recursos" },
+      { "name": "Amizade", "description": "Ambiente acolhedor, próximo e humano" }
+    ]
+  },
+  "team": [
+    {
+      "name": "José Manuel Silva",
+      "role": "Presidente da Direção",
+      "bio": "Ao serviço da ARPICA desde a sua fundação, dedicado à causa social e ao bem-estar dos idosos de Alpiarca.",
+      "image": "/images/uploads/presidente.jpg"
+    },
+    {
+      "name": "Maria Teresa Santos",
+      "role": "Vice-Presidente da Direção",
+      "bio": "Profissional de ação social com larga experiência no apoio à terceira idade e coordenação de equipas.",
+      "image": "/images/uploads/vice-presidente.jpg"
+    }
+  ],
+  "impact": [
+    { "number": "200+", "label": "Utentes apoiados" },
+    { "number": "43", "label": "Anos de atividade" },
+    { "number": "50+", "label": "Colaboradores e voluntários" }
+  ]
+}

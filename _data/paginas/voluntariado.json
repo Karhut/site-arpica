@@ -1,0 +1,51 @@
+{
+  "hero_title": "Seja Voluntário",
+  "hero_description": "Ajude-nos a servir melhor a comunidade! Existem várias formas de se envolver e fazer a diferença na vida dos idosos.",
+  "why_volunteer": {
+    "title": "Porque Ser Voluntário?",
+    "benefits": [
+      { "icon": "❤️", "title": "Fazer Diferença", "description": "Contribua para melhorar a qualidade de vida dos idosos da nossa comunidade" },
+      { "icon": "🤝", "title": "Comunidade", "description": "Faça parte de uma equipa dedicada ao bem-estar e solidariedade social" },
+      { "icon": "📚", "title": "Aprender", "description": "Adquira novas competências e conhecimentos em cuidados à pessoa idosa" },
+      { "icon": "✨", "title": "Crescer", "description": "Desenvolva-se pessoalmente e ganhe experiência valiosa" }
+    ]
+  },
+  "opportunities": [
+    {
+      "title": "Acompanhador Social",
+      "description": "Acompanhar idosos em atividades sociais, visitas e atividades de lazer",
+      "requirements": "Disponibilidade, capacidade de ouvir, gosto por trabalhar com idosos",
+      "frequency": "4-8 horas por semana (flexível)"
+    },
+    {
+      "title": "Auxiliar de Cuidados",
+      "description": "Apoiar na higiene, refeições e atividades diárias",
+      "requirements": "Formação em cuidados básicos, empatia, paciência",
+      "frequency": "Conforme disponibilidade"
+    },
+    {
+      "title": "Animador Social",
+      "description": "Dinamizar atividades recreativas, jogos, eventos e celebrações",
+      "requirements": "Criatividade, dinamismo, gosto por atividades em grupo",
+      "frequency": "3-6 horas por semana"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Preciso de experiência prévia para ser voluntário?",
+      "answer": "Não é necessária experiência prévia. Oferecemos formação inicial e acompanhamento contínuo a todos os voluntários. O mais importante é a vontade de ajudar e o respeito pelos nossos utentes."
+    },
+    {
+      "question": "Qual é o compromisso mínimo de tempo?",
+      "answer": "Pedimos um compromisso mínimo de 2 horas por semana, durante pelo menos 3 meses. No entanto, somos flexíveis e adaptamo-nos à sua disponibilidade."
+    },
+    {
+      "question": "O voluntariado é abrangido por seguro?",
+      "answer": "Sim, todos os voluntários da ARPICA estão cobertos por um seguro de acidentes pessoais durante as atividades de voluntariado, conforme a legislação em vigor."
+    },
+    {
+      "question": "Como funciona o processo de candidatura?",
+      "answer": "Após submeter o formulário acima, entraremos em contacto consigo para uma entrevista informal. Depois, receberá uma breve formação e será integrado na equipa de voluntários."
+    }
+  ]
+}

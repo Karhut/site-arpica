@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/lightbox-forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl0HPNiecjHEM4d2vBBjRpj8N54pSKz+ecb6Qg4W3i1+mCnEDb8IyBAxMfss78FEmHSRLHKrlEgQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
+<a href="#main-content" class="skip-to-content">Saltar para o conteúdo</a>
 
 <!-- ========== HEADER / NAVEGAÇÃO ========== -->
 <header class="header">
@@ -34,7 +36,7 @@
             </ul>
         </nav>
         
-        <div class="hamburger">
+        <div class="hamburger" role="button" aria-label="Abrir menu" aria-expanded="false" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -43,7 +45,7 @@
 </header>
 
 <!-- ========== PÁGINA: CONTACTO ========== -->
-<main class="main-content">
+<main class="main-content" id="main-content">
     <div class="container">
         
         <!-- PÁGINA: CONTACTO -->
@@ -75,8 +77,16 @@
         <section class="map">
             <h2>Visite-nos</h2>
             <div id="map">
-                <!-- <iframe src="[MUDAR: Link Google Maps]"></iframe> -->
-                [MUDAR: Mapa será adicionado aqui]
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3108.5!2d-8.5825!3d39.2575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Dr.+Jos%C3%A9+Ant%C3%B3nios+Sim%C3%B5es+52%2C+2090-040+Alpiar%C3%A7a!5e0!3m2!1spt-PT!2spt!4v1"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização da ARPICA no Google Maps"
+                ></iframe>
             </div>
         </section>
         
@@ -84,7 +94,9 @@
         <section class="contact-form">
             <h2>Envie-nos uma Mensagem</h2>
             
-            <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <form id="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contacto">
+                <p class="hidden" style="display:none;"><label>Não preencha: <input name="bot-field"></label></p>
                 
                 <!-- Campo: Nome -->
                 <div class="form-group">
@@ -147,17 +159,17 @@
             <h2>Horário de Funcionamento</h2>
             <div class="hours-grid">
                 <div class="hours-item">
-                    <h4>Segunda a Quinta</h4>
-                    <p>[MUDAR: 09:00 - 17:00]</p>
+                    <h4>Segunda a Sexta</h4>
+                    <p>09:00 - 17:00</p>
                 </div>
                 
                 <div class="hours-item">
-                    <h4>Sexta</h4>
-                    <p>[MUDAR: 09:00 - 16:00]</p>
+                    <h4>Sábado</h4>
+                    <p>Fechado</p>
                 </div>
                 
                 <div class="hours-item">
-                    <h4>Fim de semana</h4>
+                    <h4>Domingo</h4>
                     <p>Fechado</p>
                 </div>
             </div>
@@ -187,7 +199,7 @@
             <div class="footer-section">
                 <h3>Redes Sociais</h3>
                 <ul>
-                    <li><a href="https://www.facebook.com/arpica.alpiarca/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.facebook.com/arpica.alpiarca/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                 </ul>
             </div>
         </div>

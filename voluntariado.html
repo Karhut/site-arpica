@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/lightbox-forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl0HPNiecjHEM4d2vBBjRpj8N54pSKz+ecb6Qg4W3i1+mCnEDb8IyBAxMfss78FEmHSRLHKrlEgQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
+<a href="#main-content" class="skip-to-content">Saltar para o conteúdo</a>
 
 <!-- ========== HEADER / NAVEGAÇÃO ========== -->
 <header class="header">
@@ -34,7 +36,7 @@
             </ul>
         </nav>
         
-        <div class="hamburger">
+        <div class="hamburger" role="button" aria-label="Abrir menu" aria-expanded="false" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -43,7 +45,7 @@
 </header>
 
 <!-- ========== PÁGINA: VOLUNTARIADO ========== -->
-<main class="main-content">
+<main class="main-content" id="main-content">
     <div class="container">
         
         <!-- PÁGINA: VOLUNTARIADO -->
@@ -110,9 +112,11 @@
         
         <!-- SECÇÃO: FORMULÁRIO DE CANDIDATURA -->
         <section class="volunteer-form" id="volunteer-form">
-            <h2>Candidature-se Agora</h2>
+            <h2>Candidate-se Agora</h2>
             
-            <form id="volunteer-signup" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <form id="volunteer-signup" name="voluntariado" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="voluntariado">
+                <p class="hidden" style="display:none;"><label>Não preencha: <input name="bot-field"></label></p>
                 
                 <!-- Campo: Nome -->
                 <div class="form-group">
@@ -152,8 +156,11 @@
                     <label for="v-type">Tipo de Voluntariado Interessado *</label>
                     <select id="v-type" name="v-type" required>
                         <option value="">--- Selecione ---</option>
-                        <option value="[MUDAR: Tipo 1]">[MUDAR: Tipo 1]</option>
-                        <option value="[MUDAR: Tipo 2]">[MUDAR: Tipo 2]</option>
+                        <option value="Acompanhador Social">Acompanhador Social</option>
+                        <option value="Auxiliar de Cuidados">Auxiliar de Cuidados</option>
+                        <option value="Animador Social">Animador Social</option>
+                        <option value="Apoio Administrativo">Apoio Administrativo</option>
+                        <option value="Apoio em Eventos">Apoio em Eventos</option>
                     </select>
                 </div>
                 
@@ -189,18 +196,23 @@
             <h2>Perguntas Frequentes</h2>
             
             <div class="faq-item">
-                <h3>[MUDAR: Pergunta 1]</h3>
-                <p>[MUDAR: Resposta]</p>
+                <h3>Preciso de experiência prévia para ser voluntário?</h3>
+                <p>Não é necessária experiência prévia. Oferecemos formação inicial e acompanhamento contínuo a todos os voluntários. O mais importante é a vontade de ajudar e o respeito pelos nossos utentes.</p>
             </div>
             
             <div class="faq-item">
-                <h3>[MUDAR: Pergunta 2]</h3>
-                <p>[MUDAR: Resposta]</p>
+                <h3>Qual é o compromisso mínimo de tempo?</h3>
+                <p>Pedimos um compromisso mínimo de 2 horas por semana, durante pelo menos 3 meses. No entanto, somos flexíveis e adaptamo-nos à sua disponibilidade.</p>
             </div>
 
             <div class="faq-item">
-                <h3>[MUDAR: Pergunta 3]</h3>
-                <p>[MUDAR: Resposta]</p>
+                <h3>O voluntariado é abrangido por seguro?</h3>
+                <p>Sim, todos os voluntários da ARPICA estão cobertos por um seguro de acidentes pessoais durante as atividades de voluntariado, conforme a legislação em vigor.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Como funciona o processo de candidatura?</h3>
+                <p>Após submeter o formulário acima, entraremos em contacto consigo para uma entrevista informal. Depois, receberá uma breve formação e será integrado na equipa de voluntários.</p>
             </div>
             
         </section>
@@ -229,7 +241,7 @@
             <div class="footer-section">
                 <h3>Redes Sociais</h3>
                 <ul>
-                    <li><a href="https://www.facebook.com/arpica.alpiarca/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.facebook.com/arpica.alpiarca/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                 </ul>
             </div>
         </div>

@@ -23,11 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isActive) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
                 body.style.overflow = '';
             } else {
                 hamburger.classList.add('active');
                 navMenu.classList.add('active');
-                body.style.overflow = 'hidden'; // Previne scroll quando menu está aberto
+                hamburger.setAttribute('aria-expanded', 'true');
+                body.style.overflow = 'hidden';
             }
         });
 
@@ -180,39 +182,49 @@ async function loadSiteInfo() {
 // Carregar dados quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', loadSiteInfo);
 
-// ========== FORMULÁRIO DE CONTACTO ==========
+// ========== FORMULÁRIO DE CONTACTO (Netlify Forms) ==========
 
 document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('#contact-form, .contact-form');
+    const forms = document.querySelectorAll('form[data-netlify="true"]');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+    forms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'A enviar...';
+            submitBtn.disabled = true;
             
-            // Validação básica
-            if (!data.nome || !data.email || !data.mensagem) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
+                });
+                
+                if (response.ok) {
+                    const msg = document.createElement('div');
+                    msg.className = 'form-success';
+                    msg.textContent = '✅ Mensagem enviada com sucesso! Entraremos em contacto em breve.';
+                    form.parentNode.insertBefore(msg, form.nextSibling);
+                    form.reset();
+                    setTimeout(() => msg.remove(), 8000);
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (err) {
+                const msg = document.createElement('div');
+                msg.className = 'form-error';
+                msg.textContent = '❌ Erro ao enviar. Por favor tente novamente ou contacte-nos por telefone.';
+                form.parentNode.insertBefore(msg, form.nextSibling);
+                setTimeout(() => msg.remove(), 8000);
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('Por favor, insira um email válido.');
-                return;
-            }
-            
-            // Simular envio (substituir por backend real)
-            console.log('Dados do formulário:', data);
-            
-            // Mostrar mensagem de sucesso
-            alert('Obrigado pelo seu contacto! Respondemos em breve.');
-            contactForm.reset();
         });
-    }
+    });
 });
 
 // ========== UTILITÁRIOS ==========
