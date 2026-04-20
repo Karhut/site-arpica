@@ -1,0 +1,24 @@
+{
+  "name": "site-arpica",
+  "version": "1.0.0",
+  "description": "Site institucional da ARPICA - Associação de Reformados, Pensionistas e Idosos do Concelho de Alpiarca",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'Site estático, nenhuma build necessária'",
+    "test": "echo 'Testes completados manualmente'"
+  },
+  "keywords": [
+    "ARPICA",
+    "solidariedade",
+    "idosos",
+    "Alpiarca",
+    "responsabilidade social"
+  ],
+  "author": "ARPICA",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Karhut/site-arpica.git"
+  }
+}

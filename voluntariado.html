@@ -112,7 +112,7 @@
         <section class="volunteer-form" id="volunteer-form">
             <h2>Candidature-se Agora</h2>
             
-            <form id="volunteer-signup" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <form id="volunteer-signup" method="POST" action="https://formspree.io/f/xyzqwvut">
                 
                 <!-- Campo: Nome -->
                 <div class="form-group">
@@ -120,7 +120,7 @@
                     <input 
                         type="text" 
                         id="v-name" 
-                        name="v-name" 
+                        name="name" 
                         required
                     >
                 </div>
@@ -131,7 +131,7 @@
                     <input 
                         type="email" 
                         id="v-email" 
-                        name="v-email" 
+                        name="email" 
                         required
                     >
                 </div>
@@ -142,7 +142,7 @@
                     <input 
                         type="tel" 
                         id="v-phone" 
-                        name="v-phone" 
+                        name="phone" 
                         required
                     >
                 </div>
@@ -150,17 +150,18 @@
                 <!-- Campo: Tipo de Voluntariado -->
                 <div class="form-group">
                     <label for="v-type">Tipo de Voluntariado Interessado *</label>
-                    <select id="v-type" name="v-type" required>
+                    <select id="v-type" name="volunteer_type" required>
                         <option value="">--- Selecione ---</option>
-                        <option value="[MUDAR: Tipo 1]">[MUDAR: Tipo 1]</option>
-                        <option value="[MUDAR: Tipo 2]">[MUDAR: Tipo 2]</option>
+                        <option value="Acompanhador Social">Acompanhador Social</option>
+                        <option value="Auxiliar de Cuidados">Auxiliar de Cuidados</option>
+                        <option value="Animador Social">Animador Social</option>
                     </select>
                 </div>
                 
                 <!-- Campo: Disponibilidade -->
                 <div class="form-group">
                     <label for="v-availability">Disponibilidade Semanal *</label>
-                    <select id="v-availability" name="v-availability" required>
+                    <select id="v-availability" name="availability" required>
                         <option value="">--- Selecione ---</option>
                         <option value="< 2 horas">Menos de 2 horas</option>
                         <option value="2-4 horas">2-4 horas</option>
@@ -173,7 +174,7 @@
                     <label for="v-message">Por Que Quer Ser Voluntário?</label>
                     <textarea 
                         id="v-message" 
-                        name="v-message" 
+                        name="message" 
                         rows="5"
                     ></textarea>
                 </div>
@@ -189,18 +190,23 @@
             <h2>Perguntas Frequentes</h2>
             
             <div class="faq-item">
-                <h3>[MUDAR: Pergunta 1]</h3>
-                <p>[MUDAR: Resposta]</p>
+                <h3>🤔 Qual é a idade mínima para ser voluntário?</h3>
+                <p>Não existe idade mínima definida, mas é preferível ter idade mínima de 16 anos. Menores de 18 anos necessitam de consentimento dos pais/tutores.</p>
             </div>
             
             <div class="faq-item">
-                <h3>[MUDAR: Pergunta 2]</h3>
-                <p>[MUDAR: Resposta]</p>
+                <h3>⏰ Qual é o compromisso de tempo?</h3>
+                <p>O compromisso é flexível! Pode variar desde poucas horas por semana até dias inteiros, conforme a sua disponibilidade e o tipo de voluntariado.</p>
             </div>
 
             <div class="faq-item">
-                <h3>[MUDAR: Pergunta 3]</h3>
-                <p>[MUDAR: Resposta]</p>
+                <h3>📋 Preciso de experiência anterior?</h3>
+                <p>Não é necessária experiência prévia. Fornecemos formação adequada para todos os voluntários antes de iniciarem as suas atividades.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>💼 Será que há custos para ser voluntário?</h3>
+                <p>Não, é completamente gratuito! Oferecemos suporte e materiais necessários para o seu voluntariado.</p>
             </div>
             
         </section>
